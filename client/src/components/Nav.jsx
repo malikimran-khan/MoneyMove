@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
 
-  // Scroll detection logic
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 100) {
-        // scrolling down → hide nav
         setVisible(false);
       } else {
-        // scrolling up → show nav
         setVisible(true);
       }
       setLastScrollY(window.scrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header
@@ -39,22 +38,32 @@ export const Nav = () => {
         />
 
         {/* Center Menu */}
-        <ul className="hidden sm:flex space-x-5 md:space-x-7 text-[#3f5224] text-[15px] md:text-[14px] lg:text-[16px] font-medium lg:ml-30">
-          <li className="hover:text-[#8dc442] cursor-pointer transition-colors">
-            <Link to="/">HOME</Link>
-          </li>
-          <li className="hover:text-[#8dc442] cursor-pointer transition-colors">
-            <Link to="/Traders">TRADERS</Link>
-          </li>
-          <li className="hover:text-[#8dc442] cursor-pointer transition-colors">
-            <Link to="/Fintec">MONEY CARE</Link>
-          </li>
-          <li className="hover:text-[#8dc442] cursor-pointer transition-colors">
-            <Link to="/Faqs">FAQS</Link>
-          </li>
-          <li className="hover:text-[#8dc442] cursor-pointer transition-colors">
-            <Link to="/Contact">CONTACT</Link>
-          </li>
+        <ul className="hidden sm:flex space-x-6 md:space-x-8 text-[#3f5224] text-[15px] md:text-[14px] lg:text-[16px] font-medium">
+          {[
+            { name: "HOME", path: "/" },
+            { name: "TRADERS", path: "/Traders" },
+            { name: "MONEY CARE", path: "/Fintec" },
+            { name: "FAQS", path: "/Faqs" },
+            { name: "CONTACT", path: "/Contact" },
+          ].map((item) => (
+            <li key={item.path} className="relative group">
+              <Link
+                to={item.path}
+                className={`transition-colors duration-300 ${isActive(item.path)
+                    ? "text-[#8dc442]"
+                    : "hover:text-[#8dc442]"
+                  }`}
+              >
+                {item.name}
+              </Link>
+              <span
+                className={`absolute left-0 bottom-[-5px] h-[2px] bg-[#8dc442] transition-all duration-500 ${isActive(item.path)
+                    ? "w-full"
+                    : "w-0 group-hover:w-full"
+                  }`}
+              ></span>
+            </li>
+          ))}
         </ul>
 
         {/* Right Button */}
@@ -72,28 +81,50 @@ export const Nav = () => {
         </div>
       </div>
 
-      {/* Full-Screen Overlay */}
-      {open && (
-        <div className="fixed inset-0 bg-[#ffffff] w-full h-screen flex flex-col px-7 py-22 z-[1000] transition-all duration-300">
-          {/* Close Button */}
-          <div
-            className="absolute top-6 right-6 text-[#3f5224] text-[19px] cursor-pointer"
-            onClick={() => setOpen(false)}
+      {/* Mobile Menu (Slide from Left) */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="fixed inset-0 bg-[#ffffff] top-[-8%] w-full h-screen flex flex-col px-7 py-22 z-[1000]"
           >
-            <FiX />
-          </div>
+            {/* Close Button */}
+            <div
+              className="absolute top-6 right-6 text-[#3f5224] text-[19px] cursor-pointer"
+              onClick={() => setOpen(false)}
+            >
+              <FiX />
+            </div>
 
-          {/* Nav Links - Left Side */}
-          <ul className="space-y-6 text-[#3f5224] text-[19px] font-medium mt-16">
-            <li><Link to="/" onClick={() => setOpen(false)}>HOME</Link></li>
-            <li><Link to="/Traders" onClick={() => setOpen(false)}>TRADERS</Link></li>
-            <li><Link to="/Fintec" onClick={() => setOpen(false)}>MONEY CARE</Link></li>
-            <li><Link to="/Faqs" onClick={() => setOpen(false)}>FAQS</Link></li>
-            <li><Link to="/Contact" onClick={() => setOpen(false)}>CONTACT</Link></li>
-          </ul>
-
-        </div>
-      )}
+            {/* Nav Links */}
+            <ul className="space-y-6 text-[#3f5224] text-[19px] font-medium mt-16">
+              {[
+                { name: "HOME", path: "/" },
+                { name: "TRADERS", path: "/Traders" },
+                { name: "MONEY CARE", path: "/Fintec" },
+                { name: "FAQS", path: "/Faqs" },
+                { name: "CONTACT", path: "/Contact" },
+              ].map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={() => setOpen(false)}
+                    className={`inline-block relative pb-1 ${isActive(item.path)
+                        ? "text-[#8dc442] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#8dc442]"
+                        : "hover:text-[#8dc442]"
+                      }`}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

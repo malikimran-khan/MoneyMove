@@ -7,16 +7,20 @@ import { Contact } from "./pages/Contact/Contact";
 import { Faqs } from "./pages/FAQ/Faqs";
 import { Traders } from "./pages/Traders";
 import { Fintec } from "./pages/Fintec-care/Fintec";
+import { Privacy } from "./pages/Privacy";
+import { Services } from "./pages/services";
 function App() {
   return (
     <Router>
       <Nav />
       <Routes>
         <Route path="/" element={<Hero />} />
-        <Route path="/Traders" element={<Traders/>} />
-           <Route path="/Contact" element={<Contact />} />
+        <Route path="/Traders" element={<Traders />} />
+        <Route path="/Contact" element={<Contact />} />
         <Route path="/Faqs" element={<Faqs />} />
-               <Route path="/Fintec" element={<Fintec/>} />
+        <Route path="/Fintec" element={<Fintec />} />
+        <Route path="/privacy-policy" element={<Privacy />} />
+        <Route path="/terms-of-services" element={<Services />} />
       </Routes>
       <Footer1 />
       <Footer2 />

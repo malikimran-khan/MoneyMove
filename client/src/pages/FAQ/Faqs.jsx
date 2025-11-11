@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react"; // icons
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 export const Faqs = () => {
   const faqs = [
-    { q: "What is Fintec Markets and How Does It Work?", a: "Fintec Markets is a copy Trading service provider that allows investors to automatically replicate the trades of expert traders in real time. Important: Fintec Markets is not a broker. Instead, it integrates with trusted, regulated brokers." },
+    { q: "What is Money Move and How Does It Work?", a: "Money Move is a copy Trading service provider that allows investors to automatically replicate the trades of expert traders in real time. Important: Money Move is not a broker. Instead, it integrates with trusted, regulated brokers." },
     { q: "How can I open an account?", a: "You can register through our website by filling out the signup form with your personal details." },
     { q: "Is my data secure with you?", a: "Yes, we use top-grade encryption and follow international data protection standards to keep your information safe." },
     { q: "Do you offer support 24/7?", a: "Yes, our customer support team is available around the clock to assist you with any issues." },
@@ -33,34 +33,33 @@ export const Faqs = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="min-h-screen bg-white text-[#3f5224] px-6 sm:px-10 md:px-20 py-50">
+    <div className="min-h-screen bg-white text-[#3f5224] px-4 sm:px-6 md:px-16 lg:px-24 py-16 sm:py-20 mt-20 sm:mt-25">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2 }}
-        className="text-4xl md:text-5xl font-bold text-center mb-10"
+        transition={{ duration: 0.3 }}
+        className="text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-8 sm:mb-12"
       >
         Frequently Asked Questions
       </motion.h1>
 
-
-      <div className="max-w-6xl mx-auto space-y-5">
+      <div className="max-w-7xl mx-auto space-y-4 sm:space-y-5">
         {faqs.map((item, i) => (
           <motion.div
             key={i}
-            className="border border-[#064e3b]/30 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
+            className="border border-[#064e3b]/30 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
           >
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center"
+              className="w-full text-left px-4 sm:px-6 py-3 sm:py-4 font-semibold text-base sm:text-lg flex justify-between items-center"
             >
-              <span>{item.q}</span>
+              <span className="pr-4">{item.q}</span>
               <motion.span
                 animate={{ rotate: openIndex === i ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
-                className="text-[#064e3b]"
+                className="text-[#064e3b] flex-shrink-0"
               >
-                {openIndex === i ? <ChevronUp size={22} /> : <ChevronDown size={22} />}
+                {openIndex === i ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
               </motion.span>
             </button>
 
@@ -70,8 +69,8 @@ export const Faqs = () => {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="px-6 pb-4 text-[#3f5224]/80 text-base border-t border-[#064e3b]/20 overflow-hidden"
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="px-4 sm:px-6 pb-3 sm:pb-4 text-[#3f5224]/80 text-sm sm:text-base border-t border-[#064e3b]/20 overflow-hidden"
                 >
                   {item.a}
                 </motion.div>
@@ -81,8 +80,8 @@ export const Faqs = () => {
         ))}
       </div>
 
-      <div className="mt-12 items-center justify-center flex">
-        <button className="px-8 py-3 bg-[#8dc442] hover:bg-[#7bbc3a] text-[#3f5224] font-bold rounded-lg shadow-md transition-all duration-300">
+      <div className="mt-10 sm:mt-14 flex justify-center">
+        <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-[#8dc442] hover:bg-[#7bbc3a] text-[#3f5224] font-bold rounded-lg shadow-md transition-all duration-300 text-sm sm:text-base">
           Connect Now
         </button>
       </div>

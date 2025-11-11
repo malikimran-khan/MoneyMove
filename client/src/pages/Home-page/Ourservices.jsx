@@ -37,15 +37,15 @@ export const Ourservices = () => {
     return (
         <div className="w-full min-h-screen flex flex-col items-center text-center pt-10 px-4 bg-white">
             {/* Top Heading */}
-            <h1 className="text-[15px] sm:text-[18px] font-bold text-[#3f5224] tracking-wide mb-2">
+            <h1 className="text-[15px] sm:text-[18px] font-bold text-[#8dc442] tracking-wide mb-2">
                 OUR SERVICES
             </h1>
 
-            <h2 className="text-[20px] sm:text-[24px] md:text-[30px] font-medium text-[#3f5224] mb-4">
+            <h2 className="text-[20px] sm:text-[24px] md:text-[30px] font-semibold text-[#3f5224] mb-4">
                 Enhance Your Copy Trading Experience
             </h2>
 
-            <p className="text-[14px] sm:text-[16px] text-[#3f5224] max-w-3xl md:max-w-4xl leading-relaxed mb-12 font-medium">
+            <p className="text-[14px] sm:text-[16px] text-[#3f5224] max-w-3xl md:max-w-4xl leading-relaxed mb-12 font-medium text-left lg:text-center ml-1 lg:ml-0">
                 We provide a comprehensive suite of trading solutions tailored to support informed and
                 strategic decisions. From expert strategies to real-time execution, we provide everything
                 you need to trade smarter.

@@ -35,8 +35,8 @@ export const Safety = () => {
         </h2>
 
         <p className="text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed mb-6 max-w-lg">
-          At <strong>Money Move</strong> copytrading platform, trust comes before every trade.
-          That’s why Fintec Care is dedicated to building trust and protecting your capital.
+          At <strong className="text-[#8dc442]">Money Move</strong> copytrading platform, trust comes before every trade.
+          That’s why Money Move is dedicated to building trust and protecting your capital.
           We thoroughly evaluate every Master Trader before they join our platform.
         </p>
 

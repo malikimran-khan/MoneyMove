@@ -33,17 +33,17 @@ export const Faq = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-start items-center text-center pt-6 px-6 bg-white">
+    <div className="w-full min-h-screen flex flex-col justify-start items-center text-center  px-6 bg-white">
       {/* Heading Section */}
       <h1 className="text-[16px] font-semibold text-[#8dc442] tracking-wide mb-2">
         FAQ
       </h1>
 
-      <h2 className="text-[22px] sm:text-[26px] md:text-[30px] font-bold text-[#3f5224] mb-4">
+      <h2 className="text-[22px] sm:text-[26px] md:text-[30px] font-bold text-[#3f5224] mb-4 ">
         Frequently Asked Questions
       </h2>
 
-      <p className="text-[15px] sm:text-[16px] md:text-[17px] text-[#3f5224] max-w-4xl leading-relaxed mb-10">
+      <p className="text-[15px] sm:text-[16px] md:text-[17px] text-[#3f5224] max-w-4xl leading-relaxed mb-10 text-left lg:text-center ml-1 lg:ml-0">
         Have questions about how copy trading works or how to get started? Our
         FAQ section provides clear, straightforward answers to help you make
         confident decisions. From account setup to trading strategies and

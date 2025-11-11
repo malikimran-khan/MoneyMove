@@ -14,7 +14,7 @@ export const Risk = () => {
 
           <p className="text-[#3f5224]/90 text-base sm:text-[16px] leading-relaxed">
             It’s important for clients to understand that trading involves risks.{" "}
-            <strong>Money Move</strong> can provide assistance in mitigating
+            <strong className="text-[#8dc442]">Money Move</strong> can provide assistance in mitigating
             potential losses, but it cannot guarantee profits nor prevent all losses.
           </p>
 
@@ -46,7 +46,7 @@ export const Risk = () => {
           className="text-2xl sm:text-[23px] font-bold text-[#3f5224]"
         >
           Ready to Start Copytrading with{" "}
-          <span className="text-[#8dc442]">Fintec Market</span>?
+          <span className="text-[#8dc442]">Money Move</span> {" "}?
         </motion.h1>
 
         {/* Button Animation (slightly delayed) */}

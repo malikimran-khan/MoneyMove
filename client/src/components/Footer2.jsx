@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 export const Footer2 = () => {
     return (
         <div className="w-full bg-gradient-to-b from-[#8dc4421a] via-[#8dc44233] to-transparent text-[#2c2c2c] py-12 px-6 md:px-16 leading-relaxed">
-            <div className="max-w-6xl mx-auto space-y-8">
+            <div className="max-w-7xl mx-auto space-y-8">
                 {/* Company Info */}
                 <h3 className="text-[15px] font-bold text-[#8dc442]">
                     MONEY MOVE LIMITED
@@ -12,16 +14,16 @@ export const Footer2 = () => {
                 <p className="text-[13px]">
                     <strong className="text-[#8dc442]">Money Move</strong> is operated by
                     MONEY MOVE LIMITED, a company registered in the United Kingdom
-                    under Registration No. 15181684. Our head office is located at 2
-                    Frederick Street, Kings Cross, London, WC1X 0ND, United Kingdom.
+                    under Registration No 000000. Our head office is located at 2
+                    Frederick Street, Kings Cross, London.
                 </p>
 
                 <p className="text-[13px]">
                     For any business inquiries, partnerships, or customer support, please
                     contact us at{" "}
-                    <strong className="text-[#8dc442]">support@fintecmarkets.com</strong>{" "}
-                    or call us at <strong>+44 7888 872722</strong> (additional contact:{" "}
-                    <strong>+44 7450 371187</strong>).
+                    <strong className="text-[#8dc442]">support@moneymove.com</strong>{" "}
+                    or call us at <strong>+00 0000 000000</strong> (additional contact:{" "}
+                    <strong>+00 0000 000000</strong>).
                 </p>
 
                 <p className="text-[13px]">
@@ -49,7 +51,7 @@ export const Footer2 = () => {
                     Please note that trading in financial markets involves a high level of
                     risk, and past performance is not necessarily indicative of future
                     results. The use of any trading or investment strategy is at the
-                    user’s sole discretion and risk. Fintec Markets makes no
+                    user’s sole discretion and risk. Money Move makes no
                     representation or warranty regarding the accuracy, reliability, or
                     completeness of any information provided on this website or any
                     trading or investment activity conducted through our platform.
@@ -59,8 +61,8 @@ export const Footer2 = () => {
                     Users should carefully consider their financial situation, investment
                     objectives, and risk tolerance before engaging in any trading or
                     investment activity. Users should also seek independent financial
-                    and/or legal advice before making any investment decision. Fintec
-                    Markets is not liable for any loss or damage that may arise directly
+                    and/or legal advice before making any investment decision. Money
+                    Move is not liable for any loss or damage that may arise directly
                     or indirectly from the use of any information provided on this website
                     or any trading or investment activity conducted through our platform.
                 </p>
@@ -71,7 +73,7 @@ export const Footer2 = () => {
                     sole discretion and risk. Furthermore, we do not guarantee any profit
                     or loss, and any profits are subject to market fluctuations and risks
                     associated with financial trading. Users should only use funds that
-                    they can afford to lose, and Fintec Markets is not liable for any
+                    they can afford to lose, and Money Move is not liable for any
                     losses incurred by users.
                 </p>
 
@@ -83,10 +85,23 @@ export const Footer2 = () => {
                     and privacy policy.
                 </p>
 
-                <ul className="w-full flex justify-between items-center text-[14px] text-[#3f5224] mt-6 border-t border-[#8dc442]/40 pt-4">
-                    <li>©2025 Fintecmarkets Inc. All rights reserved. Designed with care.</li>
-                    <li className="text-[#8dc442] font-semibold cursor-pointer hover:underline">
-                        Privacy Policy | Terms of services
+                <ul className="w-full flex flex-col sm:flex-row justify-between items-center text-[12px] lg:text-[14px] text-[#3f5224] mt-6 border-t border-[#8dc442]/40 pt-4 gap-2 sm:gap-0">
+                    <li>©2025 Moneymove Inc. All rights reserved. Designed with care.</li>
+
+                    <li className="flex gap-3">
+                        <Link
+                            to="/privacy-policy"
+                            className="text-[#8dc442] font-semibold hover:underline"
+                        >
+                            Privacy Policy
+                        </Link>
+                        {" |"}
+                        <Link
+                            to="/terms-of-services"
+                            className="text-[#8dc442] font-semibold hover:underline"
+                        >
+                            Terms of Services
+                        </Link>
                     </li>
                 </ul>
 

@@ -5,11 +5,11 @@ export const Test = () => {
   const testimonials = [
     {
       name: "Ayesha Khan",
-      desc: "Fintec Markets completely changed my trading experience. The transparency and ease of use make it stand out from other platforms I’ve tried.",
+      desc: "Money Move completely changed my trading experience. The transparency and ease of use make it stand out from other platforms I’ve tried.",
     },
     {
       name: "Michael Lee",
-      desc: "I’ve been consistently earning passive income with Fintec Markets. The copytrading feature is amazing, and payouts are always on time.",
+      desc: "I’ve been consistently earning passive income with Money Move. The copytrading feature is amazing, and payouts are always on time.",
     },
     {
       name: "Sara Ahmed",
@@ -25,7 +25,7 @@ export const Test = () => {
     },
     {
       name: "James Carter",
-      desc: "Fast withdrawals, transparent fees, and 24/7 support — Fintec Markets is the most reliable platform I’ve used.",
+      desc: "Fast withdrawals, transparent fees, and 24/7 support  Money Move is the most reliable platform I’ve used.",
     },
   ];
 
@@ -62,17 +62,17 @@ export const Test = () => {
   const activePage = Math.floor(currentIndex / slidesPerView);
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-start items-center text-center pt-12 px-6 bg-white">
+    <div className="w-full min-h-screen flex flex-col justify-start items-center text-center pt-6 px-6 bg-white">
       <h1 className="text-[16px] font-bold text-[#8dc442] tracking-wide mb-2">
         TESTIMONIALS
       </h1>
 
       <h2 className="text-[22px] sm:text-[26px] md:text-[30px] font-bold text-[#3f5224] mb-4 max-w-3xl">
-        What Our Clients Say About Fintec Markets
+        What Our Clients Say About Money Move
       </h2>
 
       <p className="text-[15px] sm:text-[16px] md:text-[17px] text-[#3f5224] max-w-4xl leading-relaxed mb-12">
-        Don’t just take our word for it – hear from investors and traders who have consistently grown their wealth through our copytrading platform. From monthly profit withdrawals to risk-controlled trading, discover why Fintec Markets is trusted by clients worldwide.   
+        Don’t just take our word for it hear from investors and traders who have consistently grown their wealth through our copytrading platform. From monthly profit withdrawals to risk-controlled trading, discover why Money Move is trusted by clients worldwide.   
       </p>
 
       {/* Carousel */}
@@ -90,7 +90,7 @@ export const Test = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full md:w-1/3 px-4"
+              className="flex-shrink-0 w-full md:w-1/3 px-1 lg:px-4"
               style={{ minWidth: `${100 / slidesPerView}%` }}
             >
               <div className="h-[260px] bg-[#f7f7f7] rounded-xl shadow-md p-6 text-left border border-transparent hover:border-[#8dc442] hover:shadow-lg transition-all duration-300">

@@ -75,7 +75,7 @@ export const Traders = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen mt-20 py-16 md:py-20">
+    <div className="w-full min-h-screen mt-20 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-4">
 
@@ -87,7 +87,7 @@ export const Traders = () => {
                   key={trader.id}
                   className="col-span-1 sm:col-span-2 lg:col-span-1
                      p-6 sm:p-8
-                    flex flex-col justify-center h-full min-h-[500px] lg:min-h-[580px] lg:w-[400px]"
+                    flex flex-col justify-center h-full min-h-[400px] lg:min-h-[580px] lg:w-[400px]"
                 >
                   {trader.title && (
                     <h3 className="text-lg sm:text-xl font-semibold text-[#3f5224] mb-3">

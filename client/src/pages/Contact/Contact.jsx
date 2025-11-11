@@ -2,7 +2,7 @@ import React from "react";
 
 export const Contact = () => {
   return (
-    <div className="w-full min-h-screen bg-white flex justify-center items-center py-56 px-4 sm:px-8">
+    <div className="w-full min-h-screen bg-white flex justify-center items-center mt-35 px-4 sm:px-8">
       <div className="max-w-6xl w-full flex flex-col md:flex-row bg-white rounded-2xl shadow-xl overflow-hidden border border-[#8dc442]/30">
         
         {/* LEFT SIDE - Text */}
