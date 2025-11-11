@@ -8,7 +8,7 @@ import { Faqs } from "./pages/FAQ/Faqs";
 import { Traders } from "./pages/Traders";
 import { Fintec } from "./pages/Fintec-care/Fintec";
 import { Privacy } from "./pages/Privacy";
-import { Services } from "./pages/services";
+import { Services } from "./pages/Services";
 function App() {
   return (
     <Router>
